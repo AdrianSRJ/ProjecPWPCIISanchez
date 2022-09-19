@@ -14,11 +14,16 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
+//Middleware para parsear a json la peticion
 app.use(express.json());
+//Decodificar la url
 app.use(express.urlencoded({ extended: false }));
+//Pasear cookies
 app.use(cookieParser());
+//Servidor de archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')));
 
+//Registro Rutas
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
