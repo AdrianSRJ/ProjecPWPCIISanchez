@@ -1,9 +1,13 @@
 {
-  "name": "proyectosanchez",
+  "name": "projnotes2022b",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./server/bin/www",
+    "dev": "nodemon --exec babel-node ./server/bin/www",
+    "devb": "babel-watch ./server/bin/www",
+    "build": "",
+    "itgam": "ls"
   },
   "dependencies": {
     "app-root-path": "^3.0.0",
