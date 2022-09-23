@@ -15,8 +15,8 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 
 //Definiciones de la ruta
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var indexRouter = require('./server/routes/index');
+var usersRouter = require('./server/routes/users');
 //Creando una instancia en Express
 var app = express();
 
