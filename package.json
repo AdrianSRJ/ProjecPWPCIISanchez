@@ -5,9 +5,8 @@
   "scripts": {
     "start": "node ./server/bin/www",
     "dev": "node ./server/bin/www",
-    "devb": "babel-watch ./Server/bin/www",
-    "build": "",
-    "itgam": "ls"
+    "devb": "babel-watch ./server/bin/www",
+    "build": " "
   },
   "dependencies": {
     "app-root-path": "^3.0.0",
@@ -48,7 +47,6 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-webpack-plugin": "^3.1.1",
     "mini-css-extract-plugin": "^1.6.0",
-    "nodemon": "^2.0.20",
     "prettier": "^2.4.1",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^4.11.1"
