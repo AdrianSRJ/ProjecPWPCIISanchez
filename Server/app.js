@@ -1,39 +1,56 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+//Biblioteca de 3ros para manejar errores http
+//EES: var create Error1 = require
+//EE6
+import createError from 'http-errors';
+//El framework express
+import express from 'express';
+//Biblioteca del nucleo de node que sirve para
+//Administrar rutas
+import path from 'path';
+//Biblioteca externa que sirve para
+//Administrar cokies
+import cookieParser from 'cookie-parser';
+//Biblioteca que registra en consola
+//Solicitudes del cliente
+import logger from 'morgan';
 
+//Definiciones de la ruta
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+//Creando una instancia en Express
 var app = express();
 
 // view engine setup
+//Configura el motor de plantillas
+// Establecer donde estaran las plantillas
+// (vistas --> Views)
+//
 app.set('views', path.join(__dirname, 'views'));
+//Establezco que motor precargado usare
 app.set('view engine', 'hbs');
 
+//Establezco el middleware
 app.use(logger('dev'));
 //Middleware para parsear a json la peticion
 app.use(express.json());
-//Decodificar la url
+//Decodifica la url
 app.use(express.urlencoded({ extended: false }));
-//Pasear cookies
+// Parsear cookies
 app.use(cookieParser());
-//Servidor de archivos estaticos
-app.use(express.static(path.join(__dirname, 'public')));
+//Servicor de archivos estaticos
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 //Registro Rutas
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -43,4 +60,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+//exportando la instancia del server "app"
+//ES5
+//module.exports = app;
+//ES6
+export default app;
