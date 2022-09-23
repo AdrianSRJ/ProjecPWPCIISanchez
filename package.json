@@ -1,10 +1,10 @@
 {
-  "name": "proyectosanchez",
+  "name": "projnotes2022b",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./server/bin/www",
-    "dev": "nodemon --exec babel-node ./server/bin/www",
+    "dev": "nodemon ./server/bin/www",
     "devb": "babel-watch ./server/bin/www"
   },
   "dependencies": {
